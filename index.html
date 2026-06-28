@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edena Dilao | General Virtual Assistant</title>
-    
+    <title>Edena Dilao | Social Media Manager & Virtual Assistant</title>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
+
     <!-- AOS Animation Library CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -34,7 +34,7 @@
                             200: '#eaddd7',
                             300: '#e0cec7',
                             400: '#d2bab0',
-                            500: '#a3877b', // Soft taupe/gold accent
+                            500: '#a3877b',
                             600: '#8c7064',
                             700: '#695046',
                             800: '#4a362e',
@@ -42,6 +42,7 @@
                         },
                         dark: '#1c1917',
                         light: '#fafaf9',
+                        upwork: '#14a800'
                     }
                 }
             }
@@ -49,38 +50,25 @@
     </script>
 
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #fafaf9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #a3877b;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8c7064;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fafaf9; }
+        ::-webkit-scrollbar-thumb { background: #a3877b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8c7064; }
 
-        /* Gradient Text Utility */
         .text-gradient {
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #4a362e, #a3877b);
+            background-image: linear-gradient(to right, #2a1d17, #a3877b);
         }
 
-        /* Glassmorphism */
         .glass {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.86);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.34);
         }
 
-        /* Blob Animation */
         .blob {
             animation: morph 8s ease-in-out infinite;
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -93,7 +81,7 @@
             50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
             100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
         }
-        
+
         .typing-container::after {
             content: '|';
             animation: blink 1s step-end infinite;
@@ -109,100 +97,117 @@
     <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="font-serif text-2xl font-bold tracking-tight text-primary-900">
+                    <a href="#home" class="font-serif text-2xl font-bold tracking-tight text-primary-900">
                         EDZ<span class="text-primary-500">.</span>
                     </a>
                 </div>
-                
-                <!-- Desktop Menu -->
+
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#about" class="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors">About</a>
+                    <a href="#services" class="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors">Services</a>
                     <a href="#experience" class="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors">Experience</a>
-                    <a href="#competencies" class="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors">Competencies</a>
                     <a href="#skills" class="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors">Skills</a>
+                    <a href="#portfolio" class="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors">Portfolio</a>
                     <a href="#contact" class="px-5 py-2.5 rounded-full bg-primary-800 text-white text-sm font-medium hover:bg-primary-900 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">Let's Talk</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary-900 focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary-900 focus:outline-none" aria-label="Open menu">
                         <i class="ph ph-list text-3xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">About</a>
+                <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Services</a>
                 <a href="#experience" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Experience</a>
-                <a href="#competencies" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Competencies</a>
                 <a href="#skills" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Skills</a>
+                <a href="#portfolio" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Portfolio</a>
                 <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-primary-800 hover:bg-primary-50">Let's Talk</a>
             </div>
         </div>
     </nav>
 
     <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <!-- Decorative Background Elements -->
-        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-primary-100/50 blur-3xl rounded-full mix-blend-multiply opacity-70 -z-10 animate-[pulse_6s_ease-in-out_infinite]"></div>
-        <div class="absolute bottom-0 left-10 w-[400px] h-[400px] bg-primary-200/40 blur-3xl rounded-full mix-blend-multiply opacity-70 -z-10"></div>
+        <div class="absolute top-20 right-0 w-[520px] h-[520px] bg-primary-100/70 blur-3xl rounded-full mix-blend-multiply opacity-80 -z-10 animate-[pulse_6s_ease-in-out_infinite]"></div>
+        <div class="absolute bottom-0 left-10 w-[420px] h-[420px] bg-primary-200/45 blur-3xl rounded-full mix-blend-multiply opacity-80 -z-10"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-                
-                <!-- Hero Text -->
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <span class="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-800 text-sm font-semibold tracking-wide mb-6 uppercase">
-                        Available for Work
-                    </span>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-green-50 text-upwork text-sm font-semibold tracking-wide uppercase border border-green-100">
+                            <span class="w-2 h-2 rounded-full bg-upwork"></span> Available for Work
+                        </span>
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-primary-100 text-primary-800 text-sm font-semibold tracking-wide uppercase">
+                            $4.00/hr
+                        </span>
+                    </div>
                     <h1 class="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold leading-tight text-primary-900 mb-6">
-                        Hi, I'm <br/>
+                        Hi, I'm <br>
                         <span class="text-gradient">Edena Dilao</span>
                     </h1>
                     <div class="h-8 mb-6">
                         <p class="text-xl sm:text-2xl text-gray-600 font-light typing-container" id="typewriter"></p>
                     </div>
-                    <p class="text-base sm:text-lg text-gray-500 mb-8 max-w-lg leading-relaxed">
-                        I help businesses stay organized, productive, and visible online through reliable administrative support and digital organization.
+                    <p class="text-base sm:text-lg text-gray-500 mb-8 max-w-xl leading-relaxed">
+                        I help businesses stay organized, productive, and visible online through dependable administrative support, social media management, customer service, and digital organization.
                     </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 max-w-2xl">
+                        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
+                            <p class="text-xs text-gray-500">Location</p>
+                            <p class="font-bold text-primary-900">Tacloban, PH</p>
+                        </div>
+                        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
+                            <p class="text-xs text-gray-500">Availability</p>
+                            <p class="font-bold text-primary-900">30+ hrs/week</p>
+                        </div>
+                        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
+                            <p class="text-xs text-gray-500">Language</p>
+                            <p class="font-bold text-primary-900">English: Fluent</p>
+                        </div>
+                    </div>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#contact" class="px-8 py-4 rounded-full bg-primary-800 text-white text-center font-medium hover:bg-primary-900 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                             Hire Me
                         </a>
-                        <a href="#about" class="px-8 py-4 rounded-full bg-white border border-gray-200 text-primary-900 text-center font-medium hover:bg-gray-50 transition-all shadow-sm hover:shadow-md">
-                            Discover My Work
+                        <a href="#portfolio" class="px-8 py-4 rounded-full bg-white border border-gray-200 text-primary-900 text-center font-medium hover:bg-gray-50 transition-all shadow-sm hover:shadow-md">
+                            View Portfolio
                         </a>
                     </div>
                 </div>
 
-                <!-- Hero Image/Graphic -->
                 <div class="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div class="relative w-72 h-72 sm:w-96 sm:h-96">
-                        <!-- Abstract Shape Background -->
                         <div class="absolute inset-0 bg-gradient-to-tr from-primary-200 to-primary-400 blob opacity-80"></div>
-                        
-                        <!-- Image Container (Placeholder matching premium theme) -->
                         <div class="absolute inset-4 rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/50 bg-white">
-                            <img src="edz.jpg" alt="Edena Dilao" class="w-full h-full object-cover object-center  hover:mix-blend-normal transition-all duration-700">
+                            <div class="fallback-avatar hidden w-full h-full items-center justify-center bg-primary-100">
+                                <span class="font-serif text-7xl text-primary-700 font-bold">ED</span>
+                            </div>
+                            <img src="edz.jpg" alt="Edena Dilao" class="w-full h-full object-cover object-center transition-all duration-700" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-avatar').style.display='flex';">
                         </div>
-                        
-                        <!-- Floating Badge -->
+
                         <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 animate-[bounce_3s_infinite]">
                             <div class="bg-green-100 p-2 rounded-full">
                                 <i class="ph ph-check-circle text-green-600 text-2xl"></i>
                             </div>
                             <div>
-                                <p class="text-xs text-gray-500 font-medium">Delivering</p>
-                                <p class="text-sm font-bold text-gray-900">High-Quality Work</p>
+                                <p class="text-xs text-gray-500 font-medium">Working Style</p>
+                                <p class="text-sm font-bold text-gray-900">Clear Communicator</p>
                             </div>
+                        </div>
+
+                        <div class="absolute -top-5 -right-5 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
+                            <p class="text-xs uppercase tracking-widest text-gray-400 font-bold">Profile</p>
+                            <p class="font-bold text-primary-900">Social Media Manager</p>
+                            <p class="text-sm text-gray-500">Virtual Assistant</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -210,25 +215,25 @@
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-sm font-bold text-primary-500 tracking-widest uppercase mb-2">My Story</h2>
-                <h3 class="text-3xl md:text-4xl font-serif font-bold text-primary-900">About Me</h3>
+                <h2 class="text-sm font-bold text-primary-500 tracking-widest uppercase mb-2">Profile Overview</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-primary-900">Social Media Manager | Virtual Assistant</h3>
                 <div class="w-20 h-1 bg-primary-300 mx-auto mt-6 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                 <div class="lg:col-span-5" data-aos="fade-right">
-                    <div class="bg-primary-50 p-8 sm:p-10 rounded-3xl relative">
-                        <i class="ph-fill ph-quotes text-6xl text-primary-200 absolute top-6 left-6 opacity-50"></i>
+                    <div class="bg-primary-50 p-8 sm:p-10 rounded-3xl relative overflow-hidden">
+                        <i class="ph-fill ph-quotes text-7xl text-primary-200 absolute top-5 left-5 opacity-60"></i>
                         <p class="relative z-10 text-xl font-serif italic text-primary-800 leading-relaxed pt-8">
-                            "To become a trusted Virtual Assistant who helps business owners streamline daily operations, improve customer satisfaction, strengthen their online presence, and achieve sustainable business growth."
+                            "I provide reliable, efficient support that helps business owners streamline operations, improve customer satisfaction, and strengthen online visibility."
                         </p>
-                        <div class="mt-8 flex items-center gap-4">
+                        <div class="mt-8 flex items-center gap-4 relative z-10">
                             <div class="w-12 h-12 rounded-full bg-primary-200 flex items-center justify-center">
                                 <i class="ph ph-target text-2xl text-primary-700"></i>
                             </div>
                             <div>
-                                <p class="font-bold text-primary-900">My Ultimate Goal</p>
-                                <p class="text-sm text-gray-500">Committed to reliable & efficient support</p>
+                                <p class="font-bold text-primary-900">Professional Goal</p>
+                                <p class="text-sm text-gray-500">Organized support with attention to detail</p>
                             </div>
                         </div>
                     </div>
@@ -236,211 +241,209 @@
 
                 <div class="lg:col-span-7 space-y-6 text-gray-600 leading-relaxed text-lg" data-aos="fade-left">
                     <p>
-                        I am a detail-oriented and highly organized Virtual Assistant with a <strong class="text-primary-800">Bachelor of Science in Information Technology</strong> and a diverse professional background spanning technical support, government administration, real estate, and social media management.
+                        I am a detail-oriented and highly organized Virtual Assistant with a <strong class="text-primary-800">Bachelor of Science in Information Technology</strong> and a diverse professional background in technical support, government administration, real estate, and social media management.
                     </p>
                     <p>
-                        My experience has equipped me with strong communication, problem-solving, and organizational skills that enable me to provide reliable and efficient virtual assistance to businesses and entrepreneurs across various industries.
+                        Throughout my career, I have worked in customer support as a <strong class="text-primary-800">Technical Support Representative at Microsoft through Convergys</strong>, where I developed excellent troubleshooting, communication, and client service skills. As a PhilSys Focal Person at the Philippine Statistics Authority, I managed registration processes, verified sensitive information, maintained accurate records, and ensured efficient administrative operations.
                     </p>
                     <p>
-                        Today, I help businesses stay organized, productive, and visible online by providing dependable administrative support, social media management, customer service, and digital organization. I approach every task with professionalism, meticulous attention to detail, and a positive attitude.
+                        My real estate experience strengthened my sales, client relationship management, scheduling, and negotiation skills. Managing social media accounts and creating digital content also helped me build expertise in online marketing, customer engagement, and brand visibility.
+                    </p>
+                    <p>
+                        Today, I help businesses stay organized, productive, and visible online by providing dependable administrative support, social media management, customer service, and digital organization. I am committed to delivering high-quality work with professionalism, attention to detail, and a positive attitude.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-20 bg-primary-50/50 border-y border-gray-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-sm font-bold text-primary-500 tracking-widest uppercase mb-2">Career Journey</h2>
-                <h3 class="text-3xl md:text-4xl font-serif font-bold text-primary-900">Professional Experience</h3>
-            </div>
-
-            <div class="relative border-l-2 border-primary-200 ml-3 md:ml-6 space-y-12 pb-8">
-                
-                <!-- Experience Item 1 -->
-                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute w-6 h-6 bg-primary-500 rounded-full -left-[13px] top-1 border-4 border-white shadow"></div>
-                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-50 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                            <h4 class="text-xl font-bold text-primary-900">PhilSys Focal Person</h4>
-                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full mt-2 md:mt-0 w-fit">Philippine Statistics Authority</span>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            Managed registration processes, strictly verified sensitive information, maintained highly accurate records, and ensured the efficient flow of administrative operations within a government setting.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Experience Item 2 -->
-                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute w-6 h-6 bg-primary-400 rounded-full -left-[13px] top-1 border-4 border-white shadow"></div>
-                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-50 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                            <h4 class="text-xl font-bold text-primary-900">Technical Support Representative</h4>
-                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full mt-2 md:mt-0 w-fit">Microsoft via Convergys</span>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            Delivered top-tier customer support, where I honed excellent troubleshooting abilities, refined my communication tactics, and developed robust client service skills resolving complex technical issues.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Experience Item 3 -->
-                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute w-6 h-6 bg-primary-300 rounded-full -left-[13px] top-1 border-4 border-white shadow"></div>
-                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-50 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                            <h4 class="text-xl font-bold text-primary-900">Real Estate Agent & Social Media Manager</h4>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            Strengthened sales, client relationship management, scheduling, and negotiation skills. Concurrently managed social media accounts and created digital content, developing expertise in online marketing, customer engagement, and boosting brand visibility.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="competencies" class="py-20 bg-white">
+    <section id="services" class="py-20 bg-primary-50/50 border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-sm font-bold text-primary-500 tracking-widest uppercase mb-2">What I Do Best</h2>
-                <h3 class="text-3xl md:text-4xl font-serif font-bold text-primary-900">Core Competencies</h3>
-                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Providing a comprehensive suite of virtual assistance services tailored to keep your business running smoothly and efficiently.</p>
+                <h2 class="text-sm font-bold text-primary-500 tracking-widest uppercase mb-2">What I Can Help With</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-primary-900">Core Services</h3>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Practical virtual assistance services designed to keep your workflow organized, responsive, and visible online.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Card 1 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-200 transition-all group" data-aos="fade-up" data-aos-delay="50">
                     <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
                         <i class="ph ph-briefcase text-2xl text-primary-600 group-hover:text-white transition-colors"></i>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Administrative Support</h4>
-                    <p class="text-sm text-gray-500">Streamlining back-office tasks, document preparation, and day-to-day operations.</p>
+                    <h4 class="font-bold text-gray-900 mb-2">Virtual Assistance</h4>
+                    <p class="text-sm text-gray-500">Administrative tasks, document organization, records management, and daily operational support.</p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-200 transition-all group" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
                         <i class="ph ph-megaphone text-2xl text-primary-600 group-hover:text-white transition-colors"></i>
                     </div>
                     <h4 class="font-bold text-gray-900 mb-2">Social Media Management</h4>
-                    <p class="text-sm text-gray-500">Curating content, engaging with audiences, and managing online brand visibility.</p>
+                    <p class="text-sm text-gray-500">Content creation, promotional graphics, captions, scheduling, engagement, and brand visibility.</p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-200 transition-all group" data-aos="fade-up" data-aos-delay="150">
                     <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
                         <i class="ph ph-headset text-2xl text-primary-600 group-hover:text-white transition-colors"></i>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Customer Service</h4>
-                    <p class="text-sm text-gray-500">Providing prompt, professional technical support and handling client inquiries.</p>
+                    <h4 class="font-bold text-gray-900 mb-2">Customer Support</h4>
+                    <p class="text-sm text-gray-500">Client inquiries, online chat support, issue handling, and clear professional communication.</p>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-200 transition-all group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
-                        <i class="ph ph-calendar-check text-2xl text-primary-600 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Email & Calendar Mgt.</h4>
-                    <p class="text-sm text-gray-500">Organizing inboxes, scheduling appointments, and managing time efficiently.</p>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-200 transition-all group" data-aos="fade-up" data-aos-delay="250">
                     <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
                         <i class="ph ph-database text-2xl text-primary-600 group-hover:text-white transition-colors"></i>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Data Entry & Records</h4>
-                    <p class="text-sm text-gray-500">Maintaining accurate databases and systematically organizing digital files.</p>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-200 transition-all group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
-                        <i class="ph ph-magnifying-glass text-2xl text-primary-600 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Internet Research</h4>
-                    <p class="text-sm text-gray-500">Gathering reliable data, analyzing trends, and compiling actionable reports.</p>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-200 transition-all group" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
-                        <i class="ph ph-handshake text-2xl text-primary-600 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Client Relations</h4>
-                    <p class="text-sm text-gray-500">Building and maintaining positive, productive relationships with stakeholders.</p>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-200 transition-all group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
-                        <i class="ph ph-arrows-merge text-2xl text-primary-600 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Adaptability</h4>
-                    <p class="text-sm text-gray-500">Quickly learning new tools and seamlessly multitasking across diverse projects.</p>
+                    <h4 class="font-bold text-gray-900 mb-2">Data & Email Management</h4>
+                    <p class="text-sm text-gray-500">Data entry, Google Sheets, Microsoft Excel, inbox organization, and calendar coordination.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-bold text-primary-500 tracking-widest uppercase mb-2">Career Journey</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-primary-900">Employment History</h3>
+            </div>
+
+            <div class="relative border-l-2 border-primary-200 ml-3 md:ml-6 space-y-10 pb-8">
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="50">
+                    <div class="absolute w-6 h-6 bg-primary-500 rounded-full -left-[13px] top-1 border-4 border-white shadow"></div>
+                    <div class="bg-primary-50/60 p-6 md:p-8 rounded-2xl border border-primary-100 hover:shadow-md transition-shadow">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                            <div>
+                                <h4 class="text-xl font-bold text-primary-900">PhilSys Focal Person</h4>
+                                <p class="text-sm text-gray-500">Philippine Statistics Authority - Leyte</p>
+                            </div>
+                            <span class="inline-block px-3 py-1 bg-white text-gray-600 text-xs font-semibold rounded-full w-fit">June 2022 - December 2023</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Coordinated PhilSys registration activities, managed reports and documentation, monitored daily operations, addressed public inquiries and concerns, ensured data accuracy, and collaborated with government agencies and stakeholders to support efficient program implementation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute w-6 h-6 bg-primary-400 rounded-full -left-[13px] top-1 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                            <div>
+                                <h4 class="text-xl font-bold text-primary-900">Registration Officer II</h4>
+                                <p class="text-sm text-gray-500">Philippine Statistics Authority - Leyte</p>
+                            </div>
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full w-fit">November 2020 - May 2022</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Led and supported a registration team for the Philippine Identification System, ensuring smooth daily operations, accurate data capture, applicant verification, and proper document checking. Assisted team members, handled client concerns, and helped maintain organized and efficient registration activities.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="150">
+                    <div class="absolute w-6 h-6 bg-primary-300 rounded-full -left-[13px] top-1 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                            <div>
+                                <h4 class="text-xl font-bold text-primary-900">Real Estate Sales Agent</h4>
+                                <p class="text-sm text-gray-500">HappyHomes Tanauan | DoubleDragon Properties Corp.</p>
+                            </div>
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full w-fit">February 2018 - October 2020</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Assisted clients in buying and selling properties, generated leads, scheduled property viewings, managed client communications, and provided excellent customer service throughout the sales process.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute w-6 h-6 bg-primary-200 rounded-full -left-[13px] top-1 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                            <div>
+                                <h4 class="text-xl font-bold text-primary-900">Technical Support</h4>
+                                <p class="text-sm text-gray-500">Convergys</p>
+                            </div>
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full w-fit">November 2016 - December 2017</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Handled inbound customer calls, resolved technical issues, provided excellent customer support, and promoted relevant products and services through upselling.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 bg-primary-900 rounded-3xl p-8 md:p-10 text-white" data-aos="fade-up">
+                <p class="text-sm font-bold text-primary-300 tracking-widest uppercase mb-3">Other Experience</p>
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+                    <div>
+                        <h4 class="text-2xl font-serif font-bold">Social Media Manager</h4>
+                        <p class="text-primary-200">Personal Business</p>
+                    </div>
+                    <span class="inline-block px-3 py-1 bg-white/10 text-white text-xs font-semibold rounded-full w-fit">Brand Visibility & Content</span>
+                </div>
+                <p class="text-primary-50/90 leading-relaxed">
+                    Managed the social media presence of my own business, including creating content, designing promotional graphics, writing captions, scheduling posts, and engaging with customers. Helped improve online visibility through consistent branding, product/service promotion, and regular content updates.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section id="skills" class="py-20 bg-dark text-white relative overflow-hidden">
-        <!-- Abstract Background -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-primary-800/30 rounded-full blur-3xl mix-blend-screen"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-900/40 rounded-full blur-3xl mix-blend-screen"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                
+            <div class="flex flex-col md:flex-row gap-12 items-start">
                 <div class="md:w-1/3" data-aos="fade-right">
                     <h2 class="text-sm font-bold text-primary-400 tracking-widest uppercase mb-2">Toolkit</h2>
-                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Technical Skills</h3>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Skills & Tools</h3>
                     <p class="text-gray-400 leading-relaxed mb-8">
-                        Proficient in modern software and AI tools designed to enhance productivity, streamline workflows, and create engaging digital content.
+                        A practical mix of administrative, communication, technical support, and social media skills for remote business support.
                     </p>
-                    <a href="#contact" class="inline-flex items-center gap-2 text-primary-400 hover:text-white transition-colors font-medium">
-                        Discuss a project <i class="ph ph-arrow-right"></i>
-                    </a>
+                    <div class="bg-white/10 border border-white/10 rounded-2xl p-5">
+                        <p class="text-xs uppercase tracking-widest text-primary-300 font-bold mb-2">Working Style</p>
+                        <p class="font-bold text-white flex items-center gap-2"><i class="ph ph-chat-circle-text text-primary-300"></i> Clear Communicator</p>
+                    </div>
                 </div>
 
                 <div class="md:w-2/3 w-full" data-aos="fade-left">
                     <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-microsoft-word text-blue-400"></i> MS Word
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-microsoft-excel text-green-500"></i> MS Excel
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-microsoft-powerpoint text-orange-500"></i> MS PowerPoint
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-google-logo text-white"></i> Google Workspace
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-facebook-logo text-blue-500"></i> Facebook Business Suite
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-meta-logo text-blue-400"></i> Meta Business Suite
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-palette text-pink-400"></i> Canva
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-robot text-teal-400"></i> ChatGPT & AI Tools
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-image text-purple-400"></i> Basic Photo Editing
-                        </span>
-                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2">
-                            <i class="ph-fill ph-video text-red-400"></i> Basic Content Creation
-                        </span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-user-focus text-primary-300"></i> Virtual Assistance</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-megaphone text-primary-300"></i> Social Media Management</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-database text-primary-300"></i> Data Entry</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-briefcase text-primary-300"></i> Administrative Support</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-chat-circle-dots text-primary-300"></i> Online Chat Support</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-house-line text-primary-300"></i> Real Estate</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-palette text-primary-300"></i> Canva</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-robot text-primary-300"></i> ChatGPT</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-google-logo text-primary-300"></i> Google Sheets</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-file-xls text-primary-300"></i> Microsoft Excel</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-file-doc text-primary-300"></i> Microsoft Word</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-presentation-chart text-primary-300"></i> PowerPoint Presentation</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-table text-primary-300"></i> Data Management</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-headset text-primary-300"></i> Technical Support</span>
+                        <span class="px-5 py-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors flex items-center gap-2"><i class="ph ph-envelope-simple text-primary-300"></i> Email Management</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="rounded-3xl p-8 bg-primary-900 text-white flex flex-col justify-between" data-aos="fade-left">
+                    <div>
+                        <p class="text-sm font-bold text-primary-300 uppercase tracking-widest mb-4">Education</p>
+                        <h4 class="text-2xl font-serif font-bold mb-3">AMA Computer Learning Center (ACLC)</h4>
+                        <p class="text-primary-100 leading-relaxed">Bachelor of Science in Information Technology, Computer Science</p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <p class="text-sm text-primary-200">2012 - 2016</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -449,9 +452,9 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
             <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary-900 mb-6">Ready to streamline your business?</h2>
             <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-                Let's discuss how my administrative support and digital organization skills can help you achieve sustainable business growth.
+                Let's discuss how my administrative support, social media management, customer service, and digital organization skills can help your business stay productive and visible online.
             </p>
-            
+
             <div class="bg-white p-2 rounded-full inline-flex flex-col sm:flex-row shadow-lg max-w-lg w-full">
                 <input type="email" placeholder="Enter your email address" class="flex-grow px-6 py-4 bg-transparent outline-none text-gray-700 placeholder-gray-400 w-full sm:w-auto" readonly onfocus="this.blur()" value="edztdilao@gmail.com">
                 <button onclick="copyEmail()" class="bg-primary-800 hover:bg-primary-900 text-white px-8 py-4 rounded-full font-medium transition-colors w-full sm:w-auto mt-2 sm:mt-0 flex items-center justify-center gap-2">
@@ -465,21 +468,21 @@
     <footer class="bg-white border-t border-gray-100 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <span class="font-serif text-2xl font-bold text-primary-900">ED<span class="text-primary-500">.</span></span>
+                <span class="font-serif text-2xl font-bold text-primary-900">EDZ<span class="text-primary-500">.</span></span>
             </div>
-            
+
             <p class="text-gray-500 text-sm text-center md:text-left">
-                &copy; <span id="year"></span> Edena Dilao. General & Social Media Virtual Assistant.
+                &copy; <span id="year"></span> Edena Dilao. Social Media Manager & Virtual Assistant.
             </p>
 
             <div class="flex gap-4">
-                <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary-50 hover:text-primary-600 transition-colors" aria-label="LinkedIn">
                     <i class="ph-fill ph-linkedin-logo text-xl"></i>
                 </a>
-                <a href="https://www.facebook.com/EdzTejano" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                <a href="https://www.facebook.com/EdzTejano" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary-50 hover:text-primary-600 transition-colors" aria-label="Facebook">
                     <i class="ph-fill ph-facebook-logo text-xl"></i>
                 </a>
-                <a href="edztdilao@gmail.com" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                <a href="mailto:edztdilao@gmail.com" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary-50 hover:text-primary-600 transition-colors" aria-label="Email">
                     <i class="ph-fill ph-envelope-simple text-xl"></i>
                 </a>
             </div>
@@ -488,109 +491,79 @@
 
     <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-        // Initialize AOS animations
-        AOS.init({
-            once: true,
-            offset: 50,
-            duration: 800,
-            easing: 'ease-out-cubic',
-        });
 
-        // Set current year in footer
+    <script>
+        AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-sm');
-                navbar.classList.replace('py-4', 'py-0');
-            } else {
-                navbar.classList.remove('shadow-sm');
-            }
+            if (window.scrollY > 20) navbar.classList.add('shadow-sm');
+            else navbar.classList.remove('shadow-sm');
         });
 
-        // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Close mobile menu on link click
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        // Typewriter Effect for Subtitle
-        const words = ["General Virtual Assistant", "Social Media Manager", "Technical Support Pro", "Administrative Expert"];
-        let i = 0;
-        let timer;
+        const words = [
+            "Social Media Manager | Virtual Assistant",
+            "Administrative Support Specialist",
+            "Customer Service & Chat Support",
+            "Data Entry and Email Management"
+        ];
         let isDeleting = false;
         let text = '';
         let wordIndex = 0;
 
         function typeWriter() {
             const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
-                text = currentWord.substring(0, text.length - 1);
-            } else {
-                text = currentWord.substring(0, text.length + 1);
-            }
-
+            text = isDeleting ? currentWord.substring(0, text.length - 1) : currentWord.substring(0, text.length + 1);
             document.getElementById('typewriter').innerHTML = text;
-
-            let typeSpeed = 100;
-
-            if (isDeleting) {
-                typeSpeed /= 2;
-            }
-
+            let typeSpeed = isDeleting ? 45 : 90;
             if (!isDeleting && text === currentWord) {
-                typeSpeed = 2000; // Pause at end of word
+                typeSpeed = 1800;
                 isDeleting = true;
             } else if (isDeleting && text === '') {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500; // Pause before new word
+                typeSpeed = 450;
             }
-
             setTimeout(typeWriter, typeSpeed);
         }
 
-        // Start typing effect on load
-        window.onload = function() {
-            setTimeout(typeWriter, 1000);
-        };
+        window.onload = function() { setTimeout(typeWriter, 700); };
 
-        // Mock Email Copy Function
         function copyEmail() {
-            const email = "edztdilao@gmail.com"; // Placeholder email
-            
-            // Using older execCommand as fallback for iFrames
-            const textArea = document.createElement("textarea");
-            textArea.value = email;
-            document.body.appendChild(textArea);
-            textArea.select();
-            
-            try {
-                document.execCommand('copy');
-                const msg = document.getElementById('copyMsg');
-                msg.classList.remove('opacity-0');
-                setTimeout(() => {
-                    msg.classList.add('opacity-0');
-                }, 3000);
-            } catch (err) {
-                console.error('Unable to copy', err);
+            const email = "edztdilao@gmail.com";
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email).then(showCopiedMessage).catch(fallbackCopy);
+            } else {
+                fallbackCopy();
             }
-            
+        }
+
+        function fallbackCopy() {
+            const textArea = document.createElement("textarea");
+            textArea.value = "edztdilao@gmail.com";
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try { document.execCommand('copy'); showCopiedMessage(); }
+            catch (err) { console.error('Unable to copy', err); }
             document.body.removeChild(textArea);
+        }
+
+        function showCopiedMessage() {
+            const msg = document.getElementById('copyMsg');
+            msg.classList.remove('opacity-0');
+            setTimeout(() => msg.classList.add('opacity-0'), 3000);
         }
     </script>
 </body>
